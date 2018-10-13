@@ -1,0 +1,472 @@
+
+
+
+.work-page{
+
+    hr{
+        margin-bottom: 50px;
+    }
+
+    .banner{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        h1{
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5em;
+            font-weight: bold;
+        }
+        margin-top:100px;
+        height: 200px;
+        padding-bottom: 50px;
+    }
+
+    .showcase-image{
+        & .image-icon{
+            width: 30%;
+            float: right;
+            margin-top: 30px;
+            @include media-query($on-palm) {
+                float: left;
+            }
+        }
+    }
+
+    .showcase-info{
+        & h1{
+            margin-bottom: 0;
+        }
+    }
+
+    .skill-tags {
+            margin-top: 0em;
+            margin-bottom: 0.6em;
+        & span {
+            display: inline-block;
+            font-size: 0.8em;
+            margin: 0.3em 0;
+            padding: 0 0.5em;
+            border: 1px solid #7C7A8D;
+            border-radius: 15px;
+        }
+    }
+
+
+
+    .showcase-grid-container{
+        display: grid;
+        margin:2vw;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2vw;
+        @include media-query($on-palm) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .extra-info{
+        & h3{
+            margin-bottom: 0;
+        }
+        position: relative;
+        grid-column: 1/3;
+        height: 400px;
+        @include media-query($on-palm) {
+            grid-column: 1;
+        }
+        @include media-query($content-width) {
+            display: inline-block;
+        }
+        @include media-query(850px) {
+            display: inline-block;
+            font-size: 0.9em;
+        }
+        @include media-query(650px) {
+            display: inline-block;
+            font-size: 0.85em;
+        }
+        &#misc{
+            height: 500px;
+            @include media-query($on-palm) {
+                height: auto;
+            }
+        }
+        & .animator{
+            pointer-events: none;
+            position: absolute;
+            width: 60%;
+            top: -40%;
+            right: 0;
+            @include media-query($on-palm) {
+                display: none;
+            }
+            @include media-query($on-palm) {
+                display: none;
+            }
+            
+            &#eventory{
+                top: -20%;
+                @include media-query($content-width) {
+                    top:0;
+                }
+            }
+            &#arduino{
+                @include media-query($content-width) {
+                    top:0;
+                }
+            }
+            &#misc{
+                top: 0;
+                @include media-query($content-width) {
+                    top:0;
+                }
+            }
+        }
+        & .my-text{
+            margin-left: 2vw;
+            width: 30%;
+            @include media-query($on-palm) {
+                font-size: 16px;
+                width: 100%;
+                margin-left: 0;
+            }
+            @include media-query($on-palm) {
+                width: 100%;
+            }
+            & p{
+                margin-bottom: 0.2em;
+            }
+        }
+    }
+
+
+
+
+    .animator{
+        // height: 350px;
+        // width: 400px;
+        position: relative;
+        @include media-query($content-width) {
+            display: inline-block;
+        }
+    }
+
+    .image-container{
+        pointer-events: auto !important;
+        width: 100%;
+        overflow: hidden;
+        box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.055);
+        & .image{
+            transition: all 0.5s;
+            height: 100%;
+            width: 100%;
+            &:hover{
+                transform: scale(1.03);
+            }
+        }
+
+        & #sheep-button{
+            top: 40%;
+        }
+        & #estimator-button{
+            top: 60%;
+        }
+
+
+        //image overlay button
+        & .button{
+            position: absolute;
+            left:0;
+            right: 0;
+            top: 50%;
+            text-align: center;
+            opacity: 0;
+            transition: opacity .35s ease;
+            & a {   
+                width: 200px;
+                padding: 12px 48px;
+                text-align: center;
+                color: white;
+                border: solid 2px white;
+                z-index: 1;
+            }
+        }
+        &:hover .button{
+            opacity: 1;
+        }
+        & .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: background 0.5s ease;
+        }
+        &:hover .overlay {
+            display: block;
+            background: rgba(0, 0, 0, .3);
+          }
+        //______
+    }
+
+    [data-aos="swipeRight"][my-delay]{
+        opacity: 1;
+        &>*{
+            opacity: 0;
+            pointer-events: none;
+        }
+        &.aos-animate>*{
+            animation: appear 1s forwards, mouseEnable 0s forwards 1s;
+            animation-delay: 0.7s;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #ff7675;
+        }
+        &.aos-animate::before {
+            left: auto;
+            right: 0;
+            width: 0;
+            animation: swipeL 1s forwards;
+            animation-delay: 0.7s;
+        }
+    }
+    [data-aos="swipeRight"] {
+        opacity: 1;
+        &>*{
+            opacity: 0;
+            pointer-events: none;
+        }
+        &.aos-animate>*{
+            animation: appear 1s forwards, mouseEnable 0s forwards 1s;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #ff7675;
+        }
+        &.aos-animate::before {
+            left: auto;
+            right: 0;
+            width: 0;
+            animation: swipeL 1s forwards;
+        }
+    }
+
+    // [data-aos="swipeLeft"][my-delay]{
+    //     animation-delay: 2s;
+    // }
+
+    [data-aos="swipeLeft"][my-delay]{
+        opacity: 1;
+        &>*{
+            opacity: 0;
+            pointer-events: none;
+        }
+        &.aos-animate>*{
+            animation: appear 1s forwards, mouseEnable 0s forwards 1s;
+            animation-delay: 0.7s;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #ff7675;
+        }
+        &.aos-animate::before {
+            left: auto;
+            right: 0;
+            width: 0;
+            animation: swipeR 1s forwards;
+            animation-delay: 0.7s;
+        }
+    }
+    [data-aos="swipeLeft"]{
+        opacity: 1;
+        &>*{
+            opacity: 0;
+            pointer-events: none;
+        }
+        &.aos-animate>*{
+            animation: appear 1s forwards, mouseEnable 0s forwards 1s;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #ff7675;
+        }
+        &.aos-animate::before {
+            left: auto;
+            right: 0;
+            width: 0;
+            animation: swipeR 1s forwards;
+        }
+    }
+
+    @keyframes mouseEnable {
+        100% {
+            pointer-events: auto;
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0
+        }
+
+        50% {
+            opacity: 0
+        }
+
+        51% {
+            opacity: 1
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes swipeL {
+        0% {
+            left: 0;
+            right: auto;
+            width: .5rem
+        }
+
+        50% {
+            left: 0;
+            right: auto;
+            width: 100%
+        }
+
+        51% {
+            left: auto;
+            right: 0;
+            width: 100%
+        }
+
+        to {
+            left: auto;
+            right: 0;
+            width: 0
+        }
+    }
+
+    @keyframes swipeR {
+        0% {
+            left: auto;
+            right: 0;
+            width: .5rem;
+        }
+
+        50% {
+            left: auto;
+            right: 0;
+            width: 100%
+        }
+
+        51% {
+            left: 0;
+            right: auto;
+            width: 100%
+        }
+
+        to {
+            left: 0;
+            right: auto;
+            width: 0rem
+
+        }
+    }
+
+    .chevron::before {
+    border-style: solid;
+    border-width: 0.25em 0.25em 0 0;
+    content: '';
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    vertical-align: top;
+    width: 20px; 
+    }
+      
+    .chevron.right:before {
+    left: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); 
+    }
+
+    .chevron.bottom:before {
+    top: 0;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg); 
+    }
+
+    .chevron.left:before {
+    left: 0.25em;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg); 
+    }
+
+    .hero__scroll {
+
+    cursor: pointer;
+    text-transform: uppercase; 
+    display:  flex;
+    align-items:  center;
+    flex-direction:  column;
+    }
+    .hero__scroll .chevron {
+    display: block;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+    color: rgb(255, 64, 64); 
+    }
+    @keyframes pulse {
+        0% {
+          -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0); 
+        }
+        50% {
+          -webkit-transform: translate(0, 10px);
+                  transform: translate(0, 10px); 
+        }
+        100% {
+          -webkit-transform: translate(0, 0);
+                  transform: translate(0, 0); } 
+    }
+
+        
+
+}

@@ -1,0 +1,350 @@
+
+
+.cbp-af-header {
+    font-family: 'Open Sans', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    // background: #f6f6f6;
+    background: var(--color-header);
+    z-index: 10000;
+    height: 80px;
+    overflow: hidden;
+    -webkit-transition: height 0.3s;
+    transition: height 0.3s, background 0.2s ease-in;
+    // transition: background-color 0.2s ease-in;
+}
+
+.cbp-af-header .cbp-af-inner {
+    width: 90%;
+    max-width: 69em;
+    margin: 0 auto;
+    padding: 0 1.875em;
+}
+
+.cbp-af-header h1,
+.cbp-af-header nav {
+    display: inline-block;
+    position: relative;
+}
+
+/* We just have one-lined elements, so we'll center the elements with the line-height set to the height of the header */
+
+.cbp-af-header h1,
+.cbp-af-header nav a {
+    line-height: 80px;
+}
+
+.cbp-af-header h1 {
+    /*    text-transform: uppercase;*/
+    color: #333;
+    letter-spacing: 4px;
+    font-size: 2em;
+    margin: 0;
+    float: left;
+}
+
+.cbp-af-header nav {
+    float: right;
+}
+
+.cbp-af-header nav a {
+    color: #aaa;
+    font-weight: 500;
+    margin: 0 10px 0 10px;
+    font-size: 1.4em;
+    text-decoration: none;
+}
+
+.cbp-af-header nav a:hover {
+/*    color: #333;*/
+}
+
+/* Transitions and class for reduced height */
+
+.cbp-af-header h1,
+.cbp-af-header nav a {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.cbp-af-header.cbp-af-header-shrink {
+    height: 60px;
+}
+
+.cbp-af-header.cbp-af-header-shrink h1,
+.cbp-af-header.cbp-af-header-shrink nav a {
+    line-height: 60px;
+}
+
+.cbp-af-header.cbp-af-header-shrink h1 {
+    font-size: 2em;
+}
+
+/* Example Media Queries */
+
+@media screen and (max-width: 55em) {
+
+    /*
+	
+	.cbp-af-header .cbp-af-inner {
+		width: 100%;
+	}
+
+	.cbp-af-header h1,
+	.cbp-af-header nav {
+		display: block;
+		margin: 0 auto;
+		text-align: center;
+		float: none;
+	}
+
+	.cbp-af-header h1,
+	.cbp-af-header nav a {
+		line-height: 115px;
+	}
+
+	.cbp-af-header nav a {
+		margin: 0 10px;
+	}
+
+	.cbp-af-header.cbp-af-header-shrink h1,
+	.cbp-af-header.cbp-af-header-shrink nav a {
+		line-height: 45px;
+	}
+
+	.cbp-af-header.cbp-af-header-shrink h1 {
+		font-size: 2em;
+	}
+
+	.cbp-af-header.cbp-af-header-shrink nav a {
+		font-size: 1em;
+	}
+*/
+
+}
+
+//@media screen and (max-width: 32.25em)
+@media screen and (max-width: 50em) {
+    .cbp-af-header {
+        height: auto;
+        transition: all 0.5s ease 0s;
+    }
+
+    .cbp-af-header nav {
+        float: left;
+        width: 100%;
+    }
+
+    .cbp-af-header.cbp-af-header-shrink{
+        height: auto;
+        display: flex;
+        top:-50px;
+    }
+
+    .cbp-af-header .cbp-af-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+
+    .cbp-af-header h1, .cbp-af-header nav a {
+        line-height: 50px;
+    }
+
+    .cbp-af-header.cbp-af-header-shrink nav a {
+        line-height: 50px;
+    }
+
+    .cbp-af-header.cbp-af-header-shrink h1 {
+        line-height: 50px;
+    }
+    
+    .myNavbar ul li a {
+        font-size: 1em;
+    }
+
+
+    /*
+	.cbp-af-header nav a {
+		font-size: 1em;
+	}
+*/
+}
+
+@media screen and (max-width: 24em) {
+    /*
+	.cbp-af-header nav a,
+	.cbp-af-header.cbp-af-header-shrink nav a {
+		line-height: 1;
+	}
+*/
+}
+
+
+.header-nav {
+    height: 80px;
+}
+
+.myNavbar ul {
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.myNavbar {
+    /* layout */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.myNavbar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.myNavbar ul li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+}
+
+.myNavbar ul a {
+    /*
+    width: 112px;
+    width: 7rem;
+    padding: 16px;
+    padding: 1rem;
+*/
+}
+
+.myNavbar {
+    /* style */
+    /*    border-bottom: 1px solid #ccc*/
+}
+
+.myNavbar ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.myNavbar ul li {
+    text-align: center;
+    background-size: 100% 200%;
+    -webkit-transition: all .25s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.myNavbar ul li:nth-child(1) {
+    background-image: -webkit-gradient( linear,
+    left top, left bottom,
+    color-stop(50%, transparent),
+    color-stop(50%, #ff7675),
+    color-stop(95%, #ff7675),
+    color-stop(95%, #d63031));
+    background-image: linear-gradient( to bottom,
+    transparent 50%,
+    #ff7675 50%,
+    #ff7675 95%,
+    #d63031 95%);
+}
+.myNavbar ul li:nth-child(2) {
+    background-image: -webkit-gradient( linear,
+    left top, left bottom,
+    color-stop(50%, transparent),
+    color-stop(50%, #55efc4),
+    color-stop(95%, #55efc4),
+    color-stop(95%, #00b894));
+    background-image: linear-gradient( to bottom,
+    transparent 50%,
+    #55efc4 50%,
+    #55efc4 95%,
+    #00b894 95%);
+}
+.myNavbar ul li:nth-child(3) {
+    background-image: -webkit-gradient( linear,
+    left top, left bottom,
+    color-stop(50%, transparent),
+    color-stop(50%, #74b9ff),
+    color-stop(95%, #74b9ff),
+    color-stop(95%, #0984e3));
+    background-image: linear-gradient( to bottom,
+    transparent 50%,
+    #74b9ff 50%,
+    #74b9ff 95%,
+    #0984e3 95%);
+}
+.myNavbar ul li:nth-child(4) {
+    background-image: -webkit-gradient( linear,
+    left top, left bottom,
+    color-stop(50%, transparent),
+    color-stop(50%, #ffeaa7),
+    color-stop(95%, #ffeaa7),
+    color-stop(95%, #fdcb6e));
+    background-image: linear-gradient( to bottom,
+    transparent 50%,
+    #ffeaa7 50%,
+    #ffeaa7 95%,
+    #fdcb6e 95%);
+}
+.myNavbar ul li:nth-child(5) {
+    background-image: -webkit-gradient( linear,
+    left top, left bottom,
+    color-stop(50%, transparent),
+    color-stop(50%, #a29bfe),
+    color-stop(95%, #a29bfe),
+    color-stop(95%, #6c5ce7));
+    background-image: linear-gradient( to bottom,
+    transparent 50%,
+    #a29bfe 50%,
+    #a29bfe 95%,
+    #6c5ce7 95%);
+}
+
+.myNavbar ul li:hover {
+    background-position: bottom center;
+}
+
+@media (hover: none) {
+    .myNavbar ul .active {
+        background-position: bottom center !important;
+    }
+    .myNavbar ul li:hover {
+        background-position: inherit;
+    }
+ }
+
+.myNavbar ul .active {
+    background-position: bottom center;
+}
+
+.myNavbar ul li a {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    margin: 0;
+    color: #34495e;
+    display: block;
+    text-decoration: none;
+}
+
+
+
+.title a{
+    color: black;
+    text-decoration: none;
+}
+

@@ -1,0 +1,210 @@
+
+
+.code-page-container{
+    display: flex;
+    // height: 5000px;
+    overflow: hidden;
+    margin-top:-30px;
+    margin-bottom:-30px;
+}
+
+.sidebar {
+    //position: absolute;
+    //left:0;
+    //margin-top: -30px;
+    font-family: "DejaVu Sans Mono", monospace;
+    font-size: 1.2rem;
+    text-align: right;
+    padding-right: 20px;
+    width: 50px;
+    border-right: 1px solid #3B3A32;
+    color: #3B3A32;
+    word-spacing: 40px; 
+    height: 1300px;
+}
+
+.code-page{
+    .banner{
+        display: flex;
+        align-items: flex-end;
+        h1{
+            font-family: "DejaVu Sans Mono", monospace;
+            font-size: 3.5em;
+            color: rgb(128, 125, 105);
+        }
+        height: 200px;
+    }
+    margin-left: 2vw;
+    margin-top: 30px;
+
+    .ex-grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2vw;
+    }
+
+    .skill{
+        padding: 20px;
+        padding-left: 50px;
+    }
+    .skill-header{
+        & h1{
+            margin-bottom: 0;
+        }
+        & .sort-info{
+           color:  rgb(128, 125, 105);
+           margin-bottom: 0;
+        }
+    }
+    .skill-tags {
+        width: 50%;
+        & span {
+        display: inline-block;
+        margin: 0.3em 0;
+        padding: 0 0.5em;
+        border: 1px solid #7C7A8D;
+        }
+    }
+
+    .extra{
+        color: rgb(128, 125, 105);
+        margin-top:50px;
+        & .skill-tags{
+            width: 70%;
+        }
+        & .skill-header{
+            font-size: 0.7em;
+        }
+        & .skill-tags span {
+            display: inline-block;
+            margin: 0.3em 0;
+            padding: 0 0.5em;
+            border: 1px solid rgb(128, 125, 105);
+            color: rgb(128, 125, 105);
+        }
+    }
+
+
+
+    #test{
+        height: 500px;
+
+    }
+
+    .work-page{
+    }
+
+    .showcase-grid-container{
+        display: grid;
+        margin:2vw;
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2vw;
+    }
+
+
+    .showcase-img{
+    }
+    .showcase-info{
+    }
+
+
+    .animator{
+        // height: 350px;
+        // width: 400px;
+        position: relative;
+    }
+
+    .image-container{
+        overflow: hidden;
+        box-shadow: 10px 10px 30px 0px rgba(0, 0, 0, 0.055);
+        & .image{
+            transition: all 0.5s;
+            height: 100%;
+            width: 100%;
+            &:hover{
+                
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    [data-aos="swipeRight"] {
+        opacity: 1;
+        &>*{
+            opacity: 0;
+            pointer-events: none;
+        }
+        &.aos-animate>*{
+            animation: appear 1s forwards, mouseEnable 0s forwards 1s;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            z-index: 2;
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: #55efc4;
+        }
+        &.aos-animate::before {
+            left: auto;
+            right: 0;
+            width: 0;
+            animation: swipe 1s forwards;
+        }
+    }
+
+    @keyframes mouseEnable {
+        100% {
+            pointer-events: auto;
+        }
+    }
+
+    @keyframes appear {
+        0% {
+            opacity: 0
+        }
+
+        50% {
+            opacity: 0
+        }
+
+        51% {
+            opacity: 1
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    @keyframes swipe {
+        0% {
+            left: 0;
+            right: auto;
+            width: .5rem
+        }
+
+        50% {
+            left: 0;
+            right: auto;
+            width: 100%
+        }
+
+        51% {
+            left: auto;
+            right: 0;
+            width: 100%
+        }
+
+        to {
+            left: auto;
+            right: 0;
+            width: 0
+        }
+    }
+
+}
